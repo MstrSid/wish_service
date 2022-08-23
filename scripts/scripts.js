@@ -3,6 +3,7 @@ const buttonWomen = document.querySelector('.header__button-gender_women');
 const buttonsChange = document.querySelectorAll('.header__button-change');
 const cardImage = document.querySelector('.card__image');
 const body = document.querySelector('body');
+const iconsSocial = document.querySelectorAll('.footer__link svg');
 
 const state = {
 	gender: body.classList.contains('women') ? 'women' : 'men',
@@ -16,11 +17,20 @@ const brushButtons = (buttons, color) => {
 	}
 }
 
+const brushIcons = (icons, color) => {
+	if (icons.length) {
+		icons.forEach(item => {
+			item.style.fill = color;
+		});
+	}
+}
+
 const changeToMen = () => {
 	if (state.gender !== 'men') {
 		body.classList.remove('women');
 		body.classList.add('men');
 		brushButtons(buttonsChange, '#1178B2');
+		brushIcons(iconsSocial, '#1178B2');
 		cardImage.src = './image/main/card-m-02-black.jpg';
 		state.gender = 'men';
 	}
@@ -31,6 +41,7 @@ const changeToWomen = () => {
 		body.classList.remove('men');
 		body.classList.add('women');
 		brushButtons(buttonsChange, '#C300C7');
+		brushIcons(iconsSocial, '#C300C7');
 		cardImage.src = './image/main/card-w-01.jpg';
 		state.gender = 'women';
 	}

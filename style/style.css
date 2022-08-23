@@ -202,12 +202,9 @@ ul {
     gap: 16px;
 }
 
-.footer__social-item {
-    width: 36px;
-    height: 36px;
-    background-repeat: no-repeat;
-    background-position: center;
+.footer__item svg {
     cursor: pointer;
+    transition: all ease 0.3s;
 }
 
 .footer__item:hover {
