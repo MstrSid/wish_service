@@ -1,18 +1,21 @@
 @font-face {
     font-family: 'Bad Script';
     font-weight: 400;
+    font-display: swap;
     src: url("../fonts/bad-script-v16-latin_cyrillic-regular.woff2") format("woff2"), url("../fonts/bad-script-v16-latin_cyrillic-regular.woff") format("woff");
 }
 
 @font-face {
     font-family: 'Open Sans';
     font-weight: 400;
+    font-display: swap;
     src: url("../fonts/open-sans-v29-latin_cyrillic-regular.woff2") format("woff2"), url("../fonts/open-sans-v29-latin_cyrillic-regular.woff") format("woff");
 }
 
 @font-face {
     font-family: 'Open Sans';
     font-weight: 700;
+    font-display: swap;
     src: url("../fonts/open-sans-v29-latin_cyrillic-700.woff2") format("woff2"), url("../fonts/open-sans-v29-latin_cyrillic-700.woff") format("woff");
 }
 
@@ -71,12 +74,21 @@ img {
     font-weight: 700;
     font-size: 18px;
     color: #FFFFFF;
-    margin-right: 30px;
 }
 
-.header__button-change:last-child {
-    margin-right: 0;
+.header__button-wrapper {
+    display: flex;
+    flex-wrap: wrap;
 }
+
+.header__button-wrapper_change-card{
+    gap: 30px
+}
+
+.header__button-wrapper_change-gender{
+    gap: 20px
+}
+
 
 .header__button-gender {
     width: 60px;
@@ -86,12 +98,8 @@ img {
     border: 1px solid transparent;
     background: #FFFFFF no-repeat center;
     background-size: 36px;
-    margin-right: 20px;
 }
 
-.header__button-gender:last-child {
-    margin-right: 0;
-}
 
 .header__button-gender_men {
     background-image: url("../image/icon/men.svg");
@@ -204,8 +212,6 @@ img {
     }
 
     .header__button-wrapper {
-        display: flex;
-        flex-wrap: wrap;
         gap: 30px;
     }
 

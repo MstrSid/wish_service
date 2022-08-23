@@ -7,15 +7,33 @@
         <meta http-equiv="X-UA-Compatible"
               content="ie=edge">
         <title>Happy Birthday - сервис для создания открыток</title>
+
+        <link rel="preload"
+              href="fonts/bad-script-v16-latin_cyrillic-regular.woff2"
+              as="font"
+              type="font/woff2"
+              crossorigin>
+        <link rel="preload"
+              href="fonts/open-sans-v29-latin_cyrillic-regular.woff2"
+              as="font"
+              type="font/woff2"
+              crossorigin>
+        <link rel="preload"
+              href="fonts/open-sans-v29-latin_cyrillic-700.woff2"
+              as="font"
+              type="font/woff2"
+              crossorigin>
+
         <link rel="stylesheet"
               href="./style/normalize.css">
         <link rel="stylesheet"
               href="./style/style.css">
+
     </head>
     <body>
         <header class="header">
             <div class="container header__container">
-                <div class="header__button-wrapper">
+                <div class="header__button-wrapper header__button-wrapper_change-card">
                     <button class="header__button-change header__button-change_text">
                         Поменять поздравление
                     </button>
@@ -23,7 +41,7 @@
                         Поменять фон
                     </button>
                 </div>
-                <div class="header__button-wrapper">
+                <div class="header__button-wrapper header__button-wrapper_change-gender">
                     <button class="header__button-gender header__button-gender_men"
                             aria-label="Поменять на мужские открытки">
                     </button>
@@ -39,7 +57,9 @@
                 <div class="card__wrapper">
                     <img class="card__image"
                          src="image/main/card-w-01.jpg"
-                         alt="Фон открытки">
+                         alt="Фон открытки"
+                         width=840
+                         height=520>
                     <p class="card__text">Поздравляю с днем рожденья! <br>
                         Пусть будет жизнь полна веселья, <br>
                         Не будет грусти и хлопот, <br>
