@@ -190,6 +190,14 @@ img {
     background-image: url("../image/icon/social/stumbleupon.svg");
 }
 
+.footer__info-wrapper {
+    font-size: 3px;
+}
+
+.footer__info-item {
+    font-size: max(3em, min(calc(100vw * 3 / 140), 7em));
+}
+
 @media (max-width: 880px) {
     .container {
         padding: 0 10px;
@@ -216,18 +224,19 @@ img {
     }
 
     .footer__container {
-        flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        gap: 20px;
+    }
+
+    .footer__social-item {
+        background-size: 28px;
     }
 
     .footer__social-wrapper {
-        order: 0;
+        display: flex;
+        max-width: 192px;
+        gap: 4px;
     }
 
-    .footer__info-wrapper {
-        order: 1;
-    }
 }
 
