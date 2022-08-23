@@ -29,11 +29,17 @@ html {
 
 body {
     font-family: "Open Sans", sans-serif;
-    background-color: #FFF1F8;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    padding-bottom: 17px;
+}
+
+.women {
+    background-color: #FFF1F8;
+}
+
+.men {
+    background-color: #EFF9FE;
 }
 
 button {
@@ -43,6 +49,60 @@ button {
 img {
     max-width: 100%;
     height: auto;
+}
+
+p {
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.card {
+    flex-grow: 1;
+    padding: 32px 0 15px;
+    display: flex;
+    align-items: center;
+}
+
+.card__container {
+    display: flex;
+}
+
+.card__wrapper {
+    position: relative;
+    margin: auto;
+    display: flex;
+    box-shadow: 0 0 50px rgba(96, 4, 50, 0.23);
+    font-size: 3px;
+}
+
+.card__image{
+    transition: opacity 1s linear;
+}
+
+.card__text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 400;
+    line-height: 1.6;
+    font-size: max(3em, min(calc(100vw * 3 / 140), 7em));
+    color: #000000;
+}
+
+.women .card__text {
+    font-family: 'Bad Script', sans-serif;
+}
+
+.men .card__text {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    color: #FFFFFF;
 }
 
 .container {
@@ -63,6 +123,7 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 30px;
 }
 
 .header__button-change {
@@ -74,6 +135,7 @@ img {
     font-weight: 700;
     font-size: 18px;
     color: #FFFFFF;
+    transition: all .3s ease;
 }
 
 .header__button-wrapper {
@@ -81,14 +143,14 @@ img {
     flex-wrap: wrap;
 }
 
-.header__button-wrapper_change-card{
-    gap: 30px
+.header__button-wrapper_change-card {
+    gap: 30px;
 }
 
-.header__button-wrapper_change-gender{
-    gap: 20px
+.header__button-wrapper_change-gender {
+    gap: 20px;
+    transition: all .8s ease;
 }
-
 
 .header__button-gender {
     width: 60px;
@@ -98,8 +160,8 @@ img {
     border: 1px solid transparent;
     background: #FFFFFF no-repeat center;
     background-size: 36px;
+    transition: all .3s ease;
 }
-
 
 .header__button-gender_men {
     background-image: url("../image/icon/men.svg");
@@ -109,40 +171,16 @@ img {
     background-image: url("../image/icon/women.svg");
 }
 
-.header__button-gender_active {
+.men .header__button-gender_men {
+    border: 1px solid #1178B2;
+}
+
+.women .header__button-gender_women {
     border: 1px solid #C300C7;
 }
 
-.card {
-    flex-grow: 1;
-    padding: 32px 0;
-    display: flex;
-    align-items: center;
-}
-
-.card__container {
-    display: flex;
-}
-
-.card__wrapper {
-    position: relative;
-    margin: auto;
-    display: flex;
-    box-shadow: 0 0 50px rgba(96, 4, 50, 0.23);
-    font-size: 3px;
-}
-
-.card__text {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-family: 'Bad Script', sans-serif;
-    font-style: italic;
-    font-weight: 400;
-    line-height: 1.6;
-    font-size: max(3em, min(calc(100vw * 3 / 140), 7em));
-    color: #000000;
+.footer {
+    padding: 17px 0;
 }
 
 .footer__container {
@@ -151,19 +189,14 @@ img {
     align-items: center;
 }
 
-.footer__info-item {
+.footer__contacts-item {
     display: block;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    margin-bottom: 8px;
 }
 
-.footer__info-item:last-child {
-    margin-bottom: 0;
-}
-
-.footer__social-wrapper {
+.footer__social {
     display: flex;
     max-width: 192px;
     gap: 16px;
@@ -177,32 +210,19 @@ img {
     cursor: pointer;
 }
 
-.footer__social-item:hover {
+.footer__item:hover {
     transition: all ease 0.3s;
     transform: scale(1.1);
 }
 
-.footer__social-item_vk {
-    background-image: url("../image/icon/social/vk.svg");
-}
-
-.footer__social-item_telegram {
-    background-image: url("../image/icon/social/telegram.svg");
-}
-
-.footer__social-item_pinterest {
-    background-image: url("../image/icon/social/pinterest.svg");
-}
-
-.footer__social-item_stumbler {
-    background-image: url("../image/icon/social/stumbleupon.svg");
-}
-
-.footer__info-wrapper {
+.footer__contacts {
     font-size: 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.footer__info-item {
+.footer__contacts-item {
     font-size: max(3em, min(calc(100vw * 3 / 140), 7em));
 }
 
@@ -229,20 +249,24 @@ img {
         margin-right: 0;
     }
 
+}
+
+@media (max-width: 480px) {
     .footer__container {
-        justify-content: space-between;
-        align-items: center;
+        flex-direction: column;
+        gap: 30px;
     }
 
-    .footer__social-item {
-        background-size: 28px;
+    .footer__item {
+        width: 28px;
     }
 
-    .footer__social-wrapper {
-        display: flex;
-        max-width: 192px;
-        gap: 4px;
+    .footer__contacts {
+        order: 1;
     }
 
+    .footer__social svg {
+        max-width: 26px;
+    }
 }
 
