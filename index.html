@@ -29,6 +29,8 @@
         <link rel="stylesheet"
               href="./style/style.css">
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
         <script src="./scripts/scripts.js"
                 defer></script>
 
@@ -42,6 +44,10 @@
                     </button>
                     <button class="header__button-change header__button-change_image">
                         Поменять фон
+                    </button>
+                    <button class="header__button-change header__button-save_image"
+                            aria-label="Сохранить открытку">
+                        Сохранить открытку
                     </button>
                 </div>
                 <div class="header__button-wrapper header__button-wrapper_change-gender">
@@ -58,7 +64,7 @@
         <main class="card">
             <div class="container card__container">
                 <div class="card__wrapper">
-                    <img class="card__image"
+                    <img class="card__image fade"
                          src="image/main/card-w-01.jpg"
                          alt="Фон открытки"
                          width=840

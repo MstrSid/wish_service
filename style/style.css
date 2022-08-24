@@ -80,10 +80,6 @@ ul {
     font-size: 3px;
 }
 
-.card__image{
-    transition: opacity 1s linear;
-}
-
 .card__text {
     position: absolute;
     left: 50%;
@@ -138,6 +134,20 @@ ul {
     transition: all .3s ease;
 }
 
+.header__button-change:hover {
+    box-shadow: 0 0 30px rgba(56, 55, 55, 0.23);
+    transform: scale(1.05);
+}
+
+.header__button-change:active {
+    transform: scale(0.95);
+    border: 3px solid #a2d781;
+}
+
+.header__button-change:focus {
+    border: 2px solid rgba(151, 232, 60, 0.79);
+}
+
 .header__button-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -163,12 +173,26 @@ ul {
     transition: all .3s ease;
 }
 
+.header__button-gender:hover {
+    box-shadow: 0 0 20px rgba(56, 55, 55, 0.23);
+    transform: scale(1.05);
+}
+
+.header__button-gender:active {
+    transform: scale(0.95);
+    border: 3px solid #a2d781;
+}
+
 .header__button-gender_men {
     background-image: url("../image/icon/men.svg");
 }
 
 .header__button-gender_women {
     background-image: url("../image/icon/women.svg");
+}
+
+.header__button-save_image {
+
 }
 
 .men .header__button-gender_men {
@@ -209,7 +233,17 @@ ul {
 
 .footer__item:hover {
     transition: all ease 0.3s;
-    transform: scale(1.1);
+    transform: scale(1.05);
+}
+
+.footer__item:active {
+    transform: scale(0.95);
+}
+
+.footer__item:focus {
+    border: 2px solid rgba(151, 232, 60, 0.79);
+    border-radius: 100%;
+    height: 40px;
 }
 
 .footer__contacts {
@@ -245,7 +279,6 @@ ul {
         background-size: 30px;
         margin-right: 0;
     }
-
 }
 
 @media (max-width: 480px) {
@@ -264,6 +297,29 @@ ul {
 
     .footer__social svg {
         max-width: 26px;
+    }
+
+    .header__button-save_image {
+        font-size: 1px;
+        background-image: url("../image/icon/save.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 64px;
+    }
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.1;
+    }
+    to {
+        opacity: 1;
     }
 }
 
